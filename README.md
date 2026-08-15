@@ -135,6 +135,15 @@ The accompanying **Excel Executive Dashboard** is organized into four purpose-bu
 | **`Geographic Logistics`** | Dual-Axis Combo Chart (*Revenue Concentration vs. Delivery Lead Times*) | São Paulo (`SP`) dominates demand (**8.3-day** average delivery time), while remote states like `RR` face **27.8-day** lead times and higher freight costs. |
 | **`Logistics & Review Scores`** | 100% Stacked Bar Chart (*Star Breakdown Across Delay Tiers*) | **Critical CSAT Tipping Point:** 1-star reviews surge from **6.6%** (Early) to **58.5%** (Late 4–7 days) and **69.7%** (Late 8+ days), causing average CSAT to drop to **1.70/5.00**. |
 
+### 1. Category Performance
+![Category Performance Chart](assets/category_performance.png)
+
+### 2. Geographic Logistics
+![Geographic Logistics Combo Chart](assets/geographic_logistics.png)
+
+### 3. Logistics Delays & Review Scores
+![Logistics Delays Stacked Bar Chart](assets/logistics_reviews.png)
+
 ---
 
 ## 💡 Strategic Business Recommendations
