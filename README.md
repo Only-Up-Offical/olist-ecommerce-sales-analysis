@@ -1,35 +1,42 @@
 # E-Commerce Sales & Logistics Analysis
 
-A business-focused SQL and dashboard project analyzing sales performance, delivery efficiency, and customer satisfaction using the Olist Brazilian e-commerce dataset.
+A SQL-driven business analytics project exploring how product mix, delivery performance, and customer experience shape e-commerce performance in Brazil.
 
-## Project Overview
-This project explores how e-commerce performance is shaped by product mix, regional logistics, and customer experience. The analysis answers three practical business questions:
+## Overview
+This project analyzes the Olist Brazilian e-commerce dataset to answer three practical business questions:
 
-- Which product categories generate the most revenue?
-- Which states have the biggest fulfillment and freight challenges?
-- At what delivery delay threshold does customer satisfaction noticeably drop?
+- Which categories generate the most revenue?
+- Which regions struggle most with fulfillment and shipping costs?
+- How do delivery delays affect customer satisfaction and review scores?
 
-By combining PostgreSQL analysis with an executive Excel dashboard, this project turns raw transaction data into business insight.
+Using PostgreSQL for analysis and Excel for executive reporting, the project turns raw transactional data into actionable business insights.
 
 ## Why this project matters
-E-commerce companies do not win only by selling more products. They win by balancing:
+E-commerce success depends on more than just sales volume. It depends on balancing:
 
-- profitable categories
-- efficient delivery operations
-- customer trust and satisfaction
+- profitable product categories
+- efficient logistics and delivery
+- strong customer experience
 
-This project shows how those factors connect in a real-world retail environment.
+This project demonstrates how a data analyst can connect operational metrics to business decisions.
 
-## Key Findings
-- Revenue is concentrated in a small set of high-performing product categories.
-- Delivery performance varies significantly by state, with large gaps in lead time and freight cost.
-- Long delays strongly correlate with lower review scores, especially after the 4–7 day delay range.
-- The project highlights a clear customer experience risk threshold where delays begin to damage satisfaction materially.
+## Key Results
+- Revenue is concentrated in a small number of high-performing categories.
+- Some states generate major revenue but also show significantly longer delivery times and higher freight costs.
+- Delivery delays sharply reduce review scores, especially beyond a moderate delay threshold.
+- The analysis identifies a clear customer experience risk point where delays begin to damage satisfaction materially.
+
+## Skills Demonstrated
+- SQL querying and data aggregation
+- Business analysis and KPI interpretation
+- Data cleaning and transformation
+- Performance and logistics analysis
+- Dashboard storytelling and executive reporting
 
 ## Tech Stack
-- PostgreSQL for data cleaning and aggregation
-- SQL queries for category, logistics, and review analysis
-- Microsoft Excel for executive dashboard reporting
+- PostgreSQL
+- SQL
+- Microsoft Excel
 - Olist public Brazilian e-commerce dataset
 
 ## Repository Structure
@@ -47,46 +54,28 @@ This project shows how those factors connect in a real-world retail environment.
 ```
 
 ## Business Questions Answered
-### 1. Which categories drive the most value?
-The analysis compares category revenue, order volume, and average order value to identify both high-volume and high-value product segments.
+### 1. Category Performance
+The analysis compares category revenue, order volume, and average order value to identify both high-volume and high-value segments.
 
-### 2. Where are the biggest logistics bottlenecks?
-The project measures delivery time and freight cost by customer state to highlight performance gaps in regional operations.
+### 2. Regional Logistics Efficiency
+The project evaluates freight cost and delivery lead time by state to highlight where fulfillment operations are underperforming.
 
-### 3. How do delays affect customer satisfaction?
-The analysis segments orders by delivery performance and measures review score distribution, showing how late deliveries lead to worse customer sentiment.
+### 3. Customer Satisfaction and Delivery Delays
+Order performance is segmented by delay buckets to measure how late deliveries influence review outcomes and customer sentiment.
 
-## SQL Analysis Highlights
-The SQL workflow covers three main areas:
+## SQL Workflow
+The SQL analysis includes three core queries:
 
-### Query 1: Category Yield & Revenue Analysis
-This query cleans translated product categories, standardizes missing category names, and calculates:
-
-- total orders
-- gross revenue
-- average order value
-
-It uses joins, category mapping logic, and aggregation to compare category performance.
+### Query 1: Category Revenue & AOV
+This query cleans translated category names, fills logical missing mappings, and calculates total revenue and average order value.
 
 ### Query 2: Regional Fulfillment Analysis
-This query evaluates:
+This query summarizes orders by state to assess delivery time, revenue concentration, and freight burden.
 
-- order volume by state
-- total revenue by state
-- average freight cost
-- average delivery lead time
-
-It helps identify which regions are generating demand but suffering from transportation inefficiency.
-
-### Query 3: Delivery Delay vs. Review Score Analysis
-This query classifies orders by delivery performance and measures rating distribution by delay tier. It highlights how late deliveries worsen customer sentiment and contribute to poor review outcomes.
+### Query 3: Delay vs. Review Score Analysis
+This query groups orders by delay performance and analyzes the distribution of 1-star to 5-star reviews.
 
 ## Dashboard Snapshot
-The dashboard includes executive-level views for:
-
-- category performance
-- regional logistics comparison
-- delivery delay impact on reviews
 
 ### Category Performance
 ![Category Performance Chart](assets/category_performance.png)
@@ -94,29 +83,29 @@ The dashboard includes executive-level views for:
 ### Geographic Logistics
 ![Geographic Logistics Combo Chart](assets/geographic_logistics.png)
 
-### Delivery Delay vs. Reviews
+### Delivery Delays & Reviews
 ![Logistics Delays Stacked Bar Chart](assets/logistics_reviews.png)
 
-## Key Insights from the Dashboard
-- High-value categories generate meaningful profit per order even when they are not the largest volume drivers.
-- Remote and less-connected states face noticeably longer delivery cycles and elevated logistics costs.
-- Delivery delays create a strong negative effect on review scores, especially once orders move beyond a moderate delay threshold.
-- Customer satisfaction falls steeply when delivery performance becomes visibly late.
+## Insights
+- Higher-value categories can outperform volume-heavy categories when measured by revenue per order.
+- Remote regions suffer from significantly longer shipping cycles and higher transportation costs.
+- Review quality declines sharply as delays grow, showing the financial and customer experience impact of fulfillment issues.
+- Customer trust begins to decline materially once delivery performance slips beyond expected thresholds.
 
 ## Recommended Actions
-1. Improve fulfillment in high-cost or remote regions by optimizing regional distribution and delivery partnerships.
-2. Proactively communicate with customers when delays begin to exceed expected thresholds.
-3. Prioritize fast, reliable shipping for categories with strong margin potential.
-4. Focus promotions on categories that produce better value per order while maintaining delivery efficiency.
+1. Improve fulfillment in remote and high-cost regions by strengthening local distribution and shipping partnerships.
+2. Trigger customer communication and proactive tracking when deliveries begin to exceed expected timing.
+3. Prioritize fast, dependable delivery for products with strong margin potential.
+4. Use category-level revenue data to allocate marketing spend toward the highest-value segments.
 
 ## How to Run
 1. Import the Olist dataset into PostgreSQL.
-2. Load the relevant tables such as orders, order_items, customers, products, category_translation, and order_reviews.
-3. Open and run the queries in [sql/ecommerce_analysis.sql](sql/ecommerce_analysis.sql).
-4. Review the Excel dashboard in the dashboard folder for a business-ready summary.
+2. Load the required tables such as orders, order_items, customers, products, category_translation, and order_reviews.
+3. Run the SQL queries in [sql/ecommerce_analysis.sql](sql/ecommerce_analysis.sql).
+4. Open the dashboard in the dashboard folder for the executive summary view.
 
 ## Project Impact
-This project demonstrates practical analytical thinking: it moves beyond descriptive statistics and turns data into operational recommendations. It is a strong example of using data to answer real business problems rather than just producing charts for the sake of charts.
+This project shows the kind of analytical thinking used in real business environments: it turns raw data into operational recommendations, not just descriptive reporting. It is a practical example of how data analysis can drive better category strategy, logistics decisions, and customer retention outcomes.
 
 ## Author
 Huseyn
